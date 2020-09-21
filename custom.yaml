@@ -1,0 +1,200 @@
+import:
+  - ../skeleton.yaml
+  - ../road_shields.day.yaml
+  # - ../poi.day.yaml
+  # - ../japan.poi.day.yaml
+global:
+
+  ######################################################  SCENE  #######################################################
+  scene_background_color: rgb(245,248,250)
+  scene_sky_zenith_color: '#347BC0'
+  scene_sky_horizon_color: '#EDF2F9'
+  scene_sky_fog_color: '#FFFFFF'
+
+  ##################################################  TEXT / LABELS  ###################################################
+  text_font_family: FiraGO
+  text_fill: '#0F1621'
+  text_outline: global.land_color
+  text_fill_address: rgb(122,147,153)
+
+  ####################################################  VISIBILITY  ####################################################
+  text_visible_admin: true
+  icon_visible_populated_places: true
+  text_visible_populated_places: true
+  text_visible_neighbourhoods: true
+  text_visible_water_labels: true
+  text_visible_building: true
+  text_visible_address: true
+  text_visible_roads: true
+  text_visible_ferry: true
+  shields_visible: true
+
+  ###################################################  UX LANGUAGE  ####################################################
+  # Default language
+  ux_language: en
+  # Fallback language
+  # ux_language_fallback: en
+
+  ######################################################  ICONS  #######################################################
+  icon_size: [[11, '11px'], [20, '24px']]
+  icon:
+    text:
+      font:
+        weight: normal
+        size: [[13, 10px], [14, 11px], [17, 12px], [19, 12px], [20, 14px]]
+        stroke:
+          color: global.text_outline
+          width: [[12, 3px], [16, 4px]]
+
+
+  #####################################################  PLACES  #######################################################
+
+  ##################################################  LAND AND WATER  ##################################################
+  land_color: rgb (245, 248, 250)
+  beach_color: rgb (255, 248, 195)
+  glacier_color: rgb (232, 242, 255)
+  woodland_color: rgb (186, 247, 176)
+  forest_color: [
+    [0,  'rgb(175,224,164)'], [8,  'rgb(223, 243, 224)'], [9,  'rgb(217, 241, 214)'], [11, 'rgb(213, 237, 206)'],
+    [15, 'rgb(213, 237, 206)'], [16, 'rgb(206, 234, 197)']
+  ]
+  water_color: rgb (153, 206, 255)
+  water_river_line_width: [[10, 1px], [13, 2px], [14, 3px], [15, 4px], [16, 7px], [17, 15px], [18, 28px], [20, 46px]]
+  water:
+    default:
+      label:
+        font:
+          weight: normal
+          size: [[11, 10px], [12, 11px], [15, 11px], [16, 12px]]
+          style: italic
+    ocean:
+      label:
+        font:
+          size: [[0, 10px], [1, 11px], [2, 13px], [3, 14px], [4, 16px], [6, 16px], [7, 17px], [8, 20px]]
+          style: italic
+    bay:
+      label:
+        font:
+          size: [[11, 10px], [12, 11px], [15, 11px], [16, 12px]]
+          stroke:
+            width: 2px
+    lake:
+      label:
+        font:
+          style: normal
+          stroke:
+            width: 1px
+
+  water_deep_color: rgb(137, 196, 250)
+  water_label_sea_color: rgb(77,147,221)
+  water_label_lake_color: rgb(34,105,191)
+  water_label_lake_outline_color: rgba(204, 230, 255, .47)
+  water_label_ocean_color: rgb(77, 147, 221)
+  water_label_bay_color: rgb(34, 105, 191)
+  water_label_bay_outline_color: rgba(204, 230, 255, .47)
+
+  ################################################  LAND-USE AND AREAS  ################################################
+ 
+  ####################################################  BOUNDARIES  ####################################################
+  boundary:
+    labels:
+      zoom:
+        min: 8
+      offset: [0px, 5px]
+      font:
+        size: 9px
+        transform: uppercase
+        stroke:
+          color: global.land_color
+          width: 3px
+      single_text:
+        offset: [0px, 0px]
+    country:
+      line:
+        width: 1px
+      outline:
+        width: [[3, '0px'], [4, '2px'], [7, '3px']]
+    other: # Used for other boundary kinds like "disputed" etc.:
+      line:
+        dash: [5, 4]
+        width: [[0, '0px'], [9, '2px']]
+      outline:
+        width: [[3, '0px'], [4, '1px'], [5, '2px'], [7, '3px']]
+    state:
+      line:
+        width: 1px
+      outline:
+        width: [[0, '0px'], [9, '1px']]
+  state_boundary_text_color: rgb(102,102,102)
+  country_boundary_color: [
+    [4, 'rgb(160, 160, 180)'], [5, 'rgb(120, 120, 140)'], [6, 'rgb(100, 100, 120)'], [7, 'rgb(100, 100, 120)'],
+    [8, 'rgb(80, 80, 100)'], [9, 'rgb(60, 60, 80)']
+  ]
+  country_boundary_outline_color: [
+    [3, 'rgba(190, 190, 190, 0.1)'], [4, 'rgba(180, 180, 180, 0.15)'], [5, 'rgba(150, 150, 150, 0.15)'],
+    [6, 'rgba(130, 130, 130, 0.15)'], [8, 'rgba(110, 110, 110, 0.15)']
+  ]
+  country_disputed_boundary_color: [
+      [4, 'rgb(160,160,180)'], [5, 'rgb(120,120,140)'], [6, 'rgb(100,100,120)'], [7, 'rgb(100,100,120)'],
+      [8, 'rgb(80,80,100)'], [9, 'rgb(60,60,80 )']
+  ]
+  country_disputed_boundary_background_color: [.50, .50, .50, .15]
+  region_boundary_color: [ # applies to states and regions
+    [3, 'rgb(225, 225, 225)'],  # 0 <= $zoom < 4
+    [4, 'rgb(195, 195, 215)'],  # 4 <= $zoom < 5
+    [5, 'rgb(210, 210, 210)'],  # 5 <= $zoom < 6
+    # 6 <= $zoom < 12 (duplicates avoid interpolation)
+    [6, 'rgb(180, 180, 180)'], [7, 'rgb(180, 180, 180)'], [8, 'rgb(180, 180, 180)'], [9, 'rgb(180, 180, 180)'],
+    [10, 'rgb(180, 180, 180)'], [11, 'rgb(180, 180, 180)'], [12, 'rgb(170, 170, 170)']  # 12 <= $zoom
+  ]
+  region_boundary_outline_color: [ # applies to states and regions
+    [4, 'rgba(220, 220, 220, 0.06)'], # 0 <= $zoom < 5
+    [5, 'rgba(215, 215, 215, 0.06)'], # 5 <= $zoom < 6
+    [6, 'rgba(200, 200, 200, 0.1)'],  # 6 <= $zoom < 7
+    # 7 <= $zoom < 12 (duplicates avoid interpolation)
+    [7, 'rgba(200, 200, 200, 0.16)'], [8, 'rgba(200, 200, 200, 0.16)'], [9, 'rgba(200, 200, 200, 0.16)'],
+    [10, 'rgba(200, 200, 200, 0.16)'], [11, 'rgba(200, 200, 200, 0.16)'], [12, 'rgba(200, 200, 200, 0.2)'] # 12 <= $zoom
+  ]
+
+  ####################################################  BUILDINGS  #####################################################
+  
+  ######################################################################################################################
+  ######################################################  ROADS  #######################################################
+  ######################################################################################################################
+  
+  ###################################################  ROAD SHIELDS  ###################################################
+
+  #####################################################  TUNNELS  ######################################################
+
+
+  #####################################################  BRIDGES  ######################################################
+
+  #####################################################  HIGHWAYS  #####################################################
+  
+  ######################################################  ROADS  #######################################################
+  highway_tunnel_center_line: rgb(204, 129, 160)
+  highway_outline: rgb(184,78,122)
+
+  highway_width: [
+    [6, 1px], [7, 2px], [8, 2.5px], [9, 3.5px], [11, 4px], [12, 5px], [13, 5.5px], [14, 7px], [15, 10px], [16, 14px],
+    [17, 18px], [18, 35px], [19, 45px], [20, 70px]
+  ]
+  highway_link_width: [
+    [5, 1px], [12, 1px], [13, 2px], [14, 3px], [15, 4px], [16, 5px], [17, 7px], [18, 18px], [19, 22px], [20, 35px]
+  ]
+  highway_trunk_width: [
+    [5, 1px], [8, 1px], [9, 2px], [10, 2px], [12, 2.5px], [13, 3px], [14, 5px], [15, 7px], [16, 12px], [17, 15px],
+    [18, 30px], [19, 37px], [20, 64px]
+  ]
+  ######################################################  PATHS  #######################################################
+
+
+  #####################################################  FERRIES  ######################################################
+
+
+  #####################################################  RAILWAYS  #####################################################
+
+  ####################################################  CONTINENTS  ####################################################
+
+
+  #######################################################  POIS  #######################################################
