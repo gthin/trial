@@ -12,14 +12,6 @@ sources:
         min_display_zoom: 1
         tiled: true
 global:
-    language: en
-    language_text_source: 
-    water: "#a0cde9"
-    text: "#56788E"
-    minor_text: "#949BAF"
-    text_outline: "#FFF"
-    
-    
     
     #Category 1
     highway: "#FFC800"
