@@ -13,7 +13,7 @@ sources:
         tiled: true
 global:
     language: en
-    language_text_source: "function() { return (global.language && feature['name:'+global.language]) || feature.name;\n}\n"
+    language_text_source: 
     water: "#a0cde9"
     text: "#56788E"
     minor_text: "#949BAF"
