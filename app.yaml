@@ -12,24 +12,24 @@ sources:
         min_display_zoom: 1
         tiled: true
 global:
-  text_font_family: FiraGO
 
-  text_visible_admin: false
-  icon_visible_populated_places: false
-  text_visible_populated_places: false
-  text_visible_neighbourhoods: false
-  text_visible_water_labels: false
-  text_visible_building: false
-  text_visible_address: false
-  text_visible_roads: false
-  text_visible_ferry: false
-  shields_visible: false
     language: en
     language_text_source: "function() { return (global.language && feature['name:'+global.language]) || feature.name;\n}\n"
     water: "#a0cde9"
     text: "#56788E"
     minor_text: "#949BAF"
     text_outline: "#FFF"
+    
+    text_visible_admin: false
+    icon_visible_populated_places: false
+    text_visible_populated_places: false
+    text_visible_neighbourhoods: false
+    text_visible_water_labels: false
+    text_visible_building: false
+    text_visible_address: false
+    text_visible_roads: false
+    text_visible_ferry: false
+    shields_visible: false
     
     
     
