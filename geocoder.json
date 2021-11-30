@@ -12,11 +12,6 @@
   },
   "security": [
     {
-      "Bearer": [
-
-      ]
-    },
-    {
       "ApiKey": [
 
       ]
@@ -24,14 +19,8 @@
   ],
   "components": {
     "securitySchemes": {
-      "Bearer": {
-        "description": "A token obtained from a separate endpoint using client credentials and an OAuth 1.0a HMAC-SHA256 signed request.\nFor more information on how to get a bearer token, see the\n[Identity & Access Management Guide](https://developer.here.com/documentation/identity-access-management/dev_guide/index.html).\n",
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      },
       "ApiKey": {
-        "description": "A key generated specifically to authenticate API requests.\nFor more information on how to get an API key, see the\n[Identity & Access Management Guide](https://developer.here.com/documentation/identity-access-management/dev_guide/index.html).\n",
+        "description": "Paste here the API Key created in your Get started card for REST APIs. To read more about access and credentials used for the REST APIs click\n[here](https://developer.here.com/documentation/identity-access-management/dev_guide/index.html).\n",
         "type": "apiKey",
         "name": "apiKey",
         "in": "query"
