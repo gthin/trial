@@ -3,7 +3,7 @@
   "info": {
     "title": "Geocoding and Search API v7",
     "version": "7.76",
-    "description": "This document describes the Geocoding and Search API.",
+    "description": "This document describes the Geocoding and Search API. These steps are to be followed to try this API in the Swagger Editor.<br/><br/><b>Step 1</b>. Click on <b> Authorize </b> button and paste your API key in the pop-up window. Click on <b> Authorize </b> and then close the pop-up. <br/> <b>Step 2</b>. Click on <b> /browse </b> to expand the Browse method. <br/> <b>Step 3</b>. Now click on <b> Try it out </b> button to activate this method. You can choose to change the values against any parameters here. <br/> <b>Step 4</b>. Scroll down the Browse method and click on <b> Execute </b> to see the response. <br/><br/> You can repeat Steps 2 to 4 on other methods to trial them. ",
     "x-document-meta-data": {
       "copyright": "© 2021 HERE Europe B.V.",
       "document-id": "d0a07edc-7422-48cb-9914-1a0129a86dca",
